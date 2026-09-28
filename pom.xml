@@ -19,19 +19,19 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <java.version>21</java.version>
-        <javafx.version>22</javafx.version>
+        <java.version>25</java.version>
+        <javafx.version>27</javafx.version>
 
         <app.name>AtlantaFX Starter</app.name>
         <app.version>${project.version}</app.version>
         <app.moduleName>starter</app.moduleName>
         <app.mainClass>starter.Launcher</app.mainClass>
 
-        <lib.atlantafx.version>2.0.1</lib.atlantafx.version>
-        <lib.ikonli.version>12.3.1</lib.ikonli.version>
-        <lib.jspecify.version>1.0.0</lib.jspecify.version>
-        <test.assertj.version>3.26.3</test.assertj.version>
-        <test.junit.version>5.10.3</test.junit.version>
+        <lib.atlantafx.version>3.0.0</lib.atlantafx.version>
+        <lib.ikonli.version>12.4.0</lib.ikonli.version>
+        <lib.jspecify.version>1.0.1</lib.jspecify.version>
+        <test.assertj.version>3.27.7</test.assertj.version>
+        <test.junit.version>5.14.4</test.junit.version>
     </properties>
 
     <dependencies>
@@ -99,7 +99,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.13.0</version>
+                <version>3.16.0</version>
                 <configuration>
                     <release>${java.version}</release>
                 </configuration>
@@ -116,6 +116,9 @@
                     -->
                     <executable>${java.home}/bin/java</executable>
                     <mainClass>${app.mainClass}</mainClass>
+                    <options>
+                        <option>--enable-native-access=javafx.graphics</option>
+                    </options>
                 </configuration>
                 <executions>
                     <execution>
@@ -130,6 +133,7 @@
                         <id>debug</id>
                         <configuration>
                             <options>
+                                <option>--enable-native-access=javafx.graphics</option>
                                 <option>-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:5005</option>
                             </options>
                         </configuration>

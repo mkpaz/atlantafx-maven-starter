@@ -1,6 +1,6 @@
 # AtlantaFX Starter
 
-A really quick skeleton project to get started with AtlantaFX and Maven. Just clone or download the repo and use it.
+A quick skeleton project to get started with AtlantaFX and Maven. Just clone or download the repo and use it.
 
 ## How to use
 
